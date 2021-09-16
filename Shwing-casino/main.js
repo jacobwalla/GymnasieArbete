@@ -1,47 +1,41 @@
-window.onload = () => {
-    this.sessionStorage.setItem("username");
-    this.sessionStorage.setItem("password");
-}
+let heads = 0;
+let tails = 0;
+let coin = document.querySelector(".coin");
+let flipBtn = document.querySelector("#flip-button");
+let resetBtn = document.querySelector("#reset-button");
 
-var input = document.getElementsByTagName('input');
-var login = document.getElementById('log-in');
-var form = document.querySelector('form');
-form.onsubmit = () => { return false }
-
-login.onclick = () => {
-    if ((input[0].value != "") && (input[1].value != "")) {
-        if ((input[0].value == sessionStorage.setItem("username")) && (input[0].value == sessionStorage.setItem("password"))) {
-            form.onsubmit = () => { return 1 }
-            document.cookie = "username"+input[0].value;
-            document.cookie = "password"+input[1].value;
-        }
-        else {
-            if ((input[0].value != sessionStorage.setItem("username"))) {
-                input[0].nextElementSibling.textContent = "Wrong Username";
-                setTimeout(() => {
-                    input[0].nextElementSibling.textContent = "";
-                }, 2000);
-            }
-            if ((input[1].value != sessionStorage.setItem("password"))) {
-                input[1].nextElementSibling.textContent = "Wrong Password";
-                setTimeout(() => {
-                    input[1].nextElementSibling.textContent = "";
-                }, 2000);
-            }
-        }
+flipBtn.addEventListener("click", () => {
+    let i = Math.floor(Math.random() * 2);
+    coin.style.animation = "none";
+    if(i){
+        setTimeout(function(){
+            coin.style.animation = "spin-heads 3s forwards";
+        }, 100);
+        heads++;
     }
-    else {
-        if (input[0].value == "") {
-            input[0].nextElementSibling.textContent = "Username is empty";
-            setTimeout(() => {
-                input[0].nextElementSibling.textContent = "";
-            }, 2000);
-        }
-        if (input[1].value == "") {
-            input[1].nextElementSibling.textContent = "Password is empty";
-            setTimeout(() => {
-                input[1].nextElementSibling.textContent = "";
-            }, 2000);
-        }
+    else{
+        setTimeout(function(){
+            coin.style.animation = "spin-tails 3s forwards";
+        }, 100);
+        tails++;
     }
+    setTimeout(updateStats, 3000);
+    disableButton();
+});
+function updateStats(){
+    document.querySelector("#heads-count").textContent = `Heads: ${heads}`;
+    document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
 }
+function disableButton() {
+    flipBtn.disabled = true;
+    setTimeout(function (){
+        flipBtn.disabled = false;
+    },3000);
+}
+resetBtn.addEventListener("click",() => {
+    coin.style.animation = "none";
+    heads = 0;
+    tails = 0;
+    updateStats();
+});
+

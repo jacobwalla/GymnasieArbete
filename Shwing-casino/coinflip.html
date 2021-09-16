@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <title>Create</title>
+    <title>Coin Flip</title>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
                 <li><a href="./shwing-casino.html">Home</a></li>
                 <li><a href="">Dice</a></li>
                 <li><a href="">Roulette</a></li>
-                <li><a href="">Coin Flip</a></li>
+                <li><a href="./coinflip.html">Coin Flip</a></li>
                 <li><a href="./about-us.html">About Us</a></li>
             </ul>
         </nav>
@@ -27,13 +27,24 @@
         <a class="login" href="./login.html"><button>Login</button></a>
     </header>
     <main>
-        <form class="box" action="login.html" method="post">
-            <h1>Create Account</h1>
-            <input type="text" name="" placeholder="Username">
-            <input type="email" name="" placeholder="Email">
-            <input type="password" name="" placeholder="Password">
-            <button id="log-in">Create</button>
-        </form>
+        <div class="kontainer2">
+            <div class="stats">
+                <p id="heads-count">Heads: 0</p>
+                <p id="tails-count">Tails: 0</p>
+            </div>
+            <div class="coin">
+                <div class="heads">
+                    <img src="./bilder/mint coin.png" alt="">
+                </div>
+                <div class="tails">
+                    <img src="./bilder/grey coin.png" alt="">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="flip-button">Flip Coin</button>
+                <button id="reset-button">Reset</button>
+            </div>
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
