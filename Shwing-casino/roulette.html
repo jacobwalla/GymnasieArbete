@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./roulette/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
     <title>Login</title>
 </head>
 
-<body class="background-2">
+<body class="background-2 back">
     <header>
         <img src="./bilder/schwing prototype logo.png" class="logo">
         <nav>
@@ -28,12 +29,14 @@
         <a class="login" href="./login.html"><button>Login</button></a>
     </header>
     <main>
-        <form class="box" action="validation.php" method="POST">
-            <h1>Login</h1>
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <button type="submit" id="log-in">Login</button>
-        </form>
+
+        <h1 id="result"></h1>
+        <div id="app">
+            <img class="marker" src="./roulette/bilder/marker.png" /> <span id="result"></span>
+            <img style="margin-top:5px" class="wheel" src="./roulette/bilder/whel.png" />
+            <img class="button" src="./roulette/bilder/button.png" />
+        </div>
+
     </main>
 
     <footer>
@@ -51,6 +54,6 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="./roulette/script.js"></script>
 </body>
 </html>

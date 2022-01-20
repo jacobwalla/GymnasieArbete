@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Staatliches', cursive;
+/*     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 :root {
@@ -13,6 +14,12 @@
     --buttons-hover: rgba(82, 221, 172, 0.5);
 }
 
+.background-1{
+    background: url(./bilder/Background1.jpg);
+}
+.background-2{
+    background: url(./bilder/Background2.jpg);
+}
 
 li,
 a,
@@ -52,23 +59,55 @@ nav li a {
 }
 
 nav li a:hover {
-    color: rgba(51, 51, 51, 0.3);
+    color: var(--buttons);
 }
 
 button {
     padding: 9px 25px;
-    background-color: var(--buttons);
-    border: none;
-    border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
     margin-right: 15px;
     transition: all 0.3s;
     width: 120px;
+    font-size: 30px;
+    font-weight: 50;
+    color: #333;
+    width: 120px;
+    height: 50px;
+    border-radius: 20px;
+    transition: ease-out 0.3s;
+    background: var(--buttons);
+    outline: none;
+    padding: .5rem;
+    text-align: center;
+    border: none;
+
 }
 
 button:hover {
-    background-color: var(--buttons-hover);
+    background: var(--buttons-hover);
+}
+
+#log-in {
+    padding: 9px 25px;
+    cursor: pointer;    
+    transition: all 0.3s;
+    width: 120px;
+    font-size: 30px;
+    font-weight: 50;
+    color: #333;
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+    transition: ease-out 0.3s;
+    background: var(--buttons);
+    outline: none;
+    padding: .5rem;
+    text-align: center;
+    border: none;
+}
+
+#log-in:hover {
+    background: var(--buttons-hover);
 }
 
 main {
@@ -96,11 +135,13 @@ main {
     display: inline-block;
     background: var(--buttons);
     border-radius: 6px;
-    padding: 10px 50px;
-    box-sizing: border-box;
-    text-decoration: none;
-    box-shadow: 3px 8px 22px rgba(94, 28, 68, 0, 0.15);
-    transition: all 0.3s;
+    width: 500px;
+    height: 100px;
+    transition: ease-out 0.3s;
+    outline: none;
+    padding: 1rem;
+    text-align: center;
+    border: none;
 }
 
 .content a:hover {
@@ -120,11 +161,13 @@ main {
     display: inline-block;
     background: var(--buttons);
     border-radius: 6px;
-    padding: 10px 50px;
-    box-sizing: border-box;
-    text-decoration: none;
-    box-shadow: 3px 8px 22px rgba(94, 28, 68, 0, 0.15);
-    transition: all 0.3s;
+    width: 120px;
+    height: 50px;
+    transition: ease-out 0.3s;
+    outline: none;
+    padding: .5rem;
+    text-align: center;
+    border: none;
 }
 
 .content1 a:hover {
@@ -326,7 +369,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1rem 0 3rem 0;
 }
 
 .socials li {
@@ -357,4 +399,15 @@ footer {
     font-size: 14px;
     word-spacing: 2px;
     text-transform: capitalize;
+}
+
+/* Welcome Message */
+.welcome-msg{
+    color: var(--font);
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 8rem;
+}
+.username{
+    color: var(--complementary);
 }

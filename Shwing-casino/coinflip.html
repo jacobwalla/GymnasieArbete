@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./dice/dice.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="./coinflip/style.css">
+    <title>Schwing Casino</title>
 </head>
 
-<body class="background-2">
+<body class="background-1">
     <header>
-        <img src="./bilder/schwing prototype logo.png" class="logo">
+        <a href="./Shwing-casino.html"><img src="./bilder/schwing prototype logo.png" class="logo"></a>
         <nav>
             <ul>
                 <li><a href="./Shwing-casino.html">Home</a></li>
@@ -25,15 +27,31 @@
             </ul>
         </nav>
 
-        <a class="login" href="./login.html"><button>Login</button></a>
+        <a class="loginBtn" href="./login.html"><button>Login</button></a>
     </header>
     <main>
-        <form class="box" action="validation.php" method="POST">
-            <h1>Login</h1>
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <button type="submit" id="log-in">Login</button>
-        </form>
+        <div class="container">
+            <div class="stats">
+                <p id="heads-count">Heads: 0</p>
+                <p id="tails-count">Tails: 0</p>
+            </div>
+            <div class="coin" id="coin">
+                <div class="heads">
+                    <img src="./bilder/grey coin.png">
+                </div>
+                <div class="tails">
+                    <img src="./bilder/mint coin.png">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="flip-button">
+                    Flip Coin
+                </button>
+                <button id="reset-button">
+                    Reset
+                </button>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -51,6 +69,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="./dice/main.js"></script>
+    <script src="./coinflip/script.js"></script>
 </body>
 </html>

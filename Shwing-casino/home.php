@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('location:login.html');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +18,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-    <title>Login</title>
+    <title>Schwing Casino</title>
 </head>
 
-<body class="background-2">
+<body class="background-1">
     <header>
-        <img src="./bilder/schwing prototype logo.png" class="logo">
+        <a href="./Shwing-casino.html"><img src="./bilder/schwing prototype logo.png" class="logo"></a>
         <nav>
             <ul>
                 <li><a href="./Shwing-casino.html">Home</a></li>
@@ -25,15 +34,10 @@
             </ul>
         </nav>
 
-        <a class="login" href="./login.html"><button>Login</button></a>
+        <a class="loginBtn" href="./logout.php"><button>Log Out</button></a>
     </header>
     <main>
-        <form class="box" action="validation.php" method="POST">
-            <h1>Login</h1>
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
-            <button type="submit" id="log-in">Login</button>
-        </form>
+        <h2 class="welcome-msg">Welcome <span class="username"><?php echo $_SESSION['username']; ?></span></h2>
     </main>
 
     <footer>
